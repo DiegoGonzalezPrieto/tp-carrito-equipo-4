@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPCarrito_equipo-4", "TPCarrito_equipo-4.csproj", "{43BD50E1-B85B-425B-A837-B623CE321C30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webform", "webform\webform.csproj", "{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{43BD50E1-B85B-425B-A837-B623CE321C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43BD50E1-B85B-425B-A837-B623CE321C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43BD50E1-B85B-425B-A837-B623CE321C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43BD50E1-B85B-425B-A837-B623CE321C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2BE06B40-6E47-4F86-AD1B-FDB2A18245ED}
+		SolutionGuid = {632A96A1-4A24-4E10-B9DA-0F2BE906FABB}
 	EndGlobalSection
 EndGlobal
