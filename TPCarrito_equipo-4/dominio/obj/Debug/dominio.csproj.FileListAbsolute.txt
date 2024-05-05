@@ -1,0 +1,12 @@
+C:\Users\Diego_prieto\Documents\TUP\dominio\bin\Debug\dominio.dll
+C:\Users\Diego_prieto\Documents\TUP\dominio\bin\Debug\dominio.pdb
+C:\Users\Diego_prieto\Documents\TUP\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Diego_prieto\Documents\TUP\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Diego_prieto\Documents\TUP\dominio\obj\Debug\dominio.dll
+C:\Users\Diego_prieto\Documents\TUP\dominio\obj\Debug\dominio.pdb
+C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\bin\Debug\dominio.dll
+C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\bin\Debug\dominio.pdb
+C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.dll
+C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.pdb
