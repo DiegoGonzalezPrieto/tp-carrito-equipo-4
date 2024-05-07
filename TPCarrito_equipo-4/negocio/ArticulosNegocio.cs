@@ -91,6 +91,71 @@ namespace negocio
             }
         }
 
+        public List<Articulo> listarConSP()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            Data Datos = new Data();
+
+            try
+            {
+                /*string consulta = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
+                    + "C.Descripcion Nombre_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
+                    "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id JOIN IMAGENES I ON I.IdArticulo = A.Id and ";
+                */
+                //Datos.setearConsulta(consulta);
+
+                Datos.setearProcedimiento("storedListar");
+
+                Datos.ejecutarLectura();
+                while (Datos.Lector.Read())
+                {
+                    Articulo articulo = new Articulo();
+
+                    // Si el artículo que se está leyendo ya fue cargado, es porque tiene más de una imagen.
+                    int indiceArticuloExistente = lista.FindIndex(a => a.Id == (int)Datos.Lector["Id"]);
+                    if (indiceArticuloExistente != -1)
+                    {
+                        // le agrego la imagen nueva y avanzo al siguiente registro.
+                        Imagen imagen = new Imagen();
+                        imagen.Url = (string)Datos.Lector["UrlImagen"];
+                        lista[indiceArticuloExistente].Imagenes.Add(imagen);
+                        continue;
+                    }
+
+                    articulo.Id = (int)Datos.Lector["Id"];
+                    articulo.CodigoArticulo = (string)Datos.Lector["Codigo"];
+                    articulo.Nombre = (string)Datos.Lector["Nombre"];
+                    articulo.Descripcion = (string)Datos.Lector["Descripcion"];
+                    //Creacion de Marca y relacion en datagrip
+                    articulo.Marca = new Marca();
+                    articulo.Marca.Id = (int)Datos.Lector["Id"];
+                    articulo.Marca.Nombre = (string)Datos.Lector["Nombre_Marca"];
+                    //Creacion de Categoria y relacion en datagrip
+                    articulo.Categoria = new Categoria();
+                    articulo.Categoria.Id = (int)Datos.Lector["Id"];
+                    articulo.Categoria.Nombre = (string)Datos.Lector["Nombre_Categoria"];
+                    articulo.Precio = (decimal)Datos.Lector["Precio"];
+                    articulo.Imagenes = new List<Imagen>();
+
+                    // si no tiene imagenes, no se cargan en el objeto
+                    if (!(Datos.Lector["UrlImagen"] is DBNull))
+                    {
+                        Imagen auxImagen = new Imagen();
+                        auxImagen.Url = (string)Datos.Lector["UrlImagen"];
+                        articulo.Imagenes.Add(auxImagen);
+                    }
+                    lista.Add(articulo);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void agregar(Articulo articuloNuevo)
         {
             Data datos = new Data();

@@ -16,3 +16,12 @@ C:\Users\Diego_prieto\Documents\TUP\tp2\negocio\bin\Debug\negocio.pdb
 C:\Users\Diego_prieto\Documents\TUP\tp2\negocio\bin\Debug\dominio.dll
 C:\Users\Diego_prieto\Documents\TUP\tp2\negocio\bin\Debug\dominio.pdb
 C:\Users\Diego_prieto\Documents\TUP\tp2\negocio\obj\Debug\negocio.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\bin\Debug\negocio.dll
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\bin\Debug\negocio.pdb
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\bin\Debug\dominio.dll
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\bin\Debug\dominio.pdb
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\obj\Debug\negocio.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\obj\Debug\negocio.dll
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\negocio\obj\Debug\negocio.pdb
