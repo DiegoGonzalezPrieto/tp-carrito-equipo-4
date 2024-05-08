@@ -20,8 +20,10 @@ namespace webform
 
 			if (!IsPostBack)
 			{
-                repRepetidor.DataSource = ListarArticulos;
-                repRepetidor.DataBind();
+                repRepetidor1.DataSource = ListarArticulos;
+                repRepetidor1.DataBind();
+                repRepetidor2.DataSource = ListarArticulos;
+                repRepetidor2.DataBind();
             }
 			
 		}

@@ -1,0 +1,27 @@
+﻿body {
+
+}
+
+.carousel-item {
+    height: 400px; 
+    width: 100%;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+}
+
+#card {
+    height:auto;
+    max-height:400px;
+}
+
+.cardbody{
+    margin-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+}
+
+
