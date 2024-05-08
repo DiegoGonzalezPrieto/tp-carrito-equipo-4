@@ -15,7 +15,8 @@ namespace webform
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			ArticulosNegocio articulo = new ArticulosNegocio();
-			ListarArticulos = articulo.listarConSP();
+            //ListarArticulos = articulo.listarConSP();
+            ListarArticulos = articulo.listar();
 
 			if (!IsPostBack)
 			{
