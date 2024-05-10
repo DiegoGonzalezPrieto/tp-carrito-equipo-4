@@ -42,10 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
-    <Compile Include="ModeloCarrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Imagen.cs" />
-    <Compile Include="ItemCarrito.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
