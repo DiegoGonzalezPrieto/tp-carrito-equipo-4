@@ -14,6 +14,7 @@ namespace webform
 		private List<Articulo> ListarArticulos;
 		protected void Page_Load(object sender, EventArgs e)
 		{
+
 			ArticulosNegocio articulo = new ArticulosNegocio();
             //ListarArticulos = articulo.listarConSP();
             ListarArticulos = articulo.listar();

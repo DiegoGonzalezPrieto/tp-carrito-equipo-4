@@ -1,9 +1,9 @@
-﻿body {
-
+﻿#homePage {
+    background-color: #ECF0F1;
 }
 
 .carousel-item {
-    height: 400px; 
+    height: 400px;
     width: 100%;
 }
 
@@ -13,15 +13,25 @@
 }
 
 #card {
-    height:auto;
-    max-height:400px;
+    height: auto;
+    min-height: 400px;
+    margin-bottom: 20px;
+    box-shadow: darkgray 1px 10px 80px 1px
 }
 
-.cardbody{
-    margin-top:10px;
-    padding-left:20px;
-    padding-right:20px;
-    padding-bottom:20px;
+#card img{
+    height:60%;
+    min-height:250px;
+    object-fit:contain;
+    object-position:center;
+}
+
+.cardbody {
+    height: 40%;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
 }
 
 

@@ -10,3 +10,9 @@ C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.csproj.Assembl
 C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.dll
 C:\Users\Diego_prieto\Documents\TUP\tp2\dominio\obj\Debug\dominio.pdb
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\dominio\bin\Debug\dominio.dll
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\dominio\bin\Debug\dominio.pdb
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.dll
+C:\Users\ASUS\OneDrive\Documentos\TUP\TERCER CUATRIMESTRE\PROGRAMACION III\TP4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.pdb
