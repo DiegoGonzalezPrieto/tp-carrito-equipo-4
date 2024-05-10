@@ -50,7 +50,7 @@
                             <a class="nav-link" href="#">Ver Detalle</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Carrito</a>
+                            <a class="nav-link" href="CarritoWeb.aspx">Carrito</a>
                         </li>
                     </ul>
                     <div class="d-flex" role="search">
