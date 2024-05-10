@@ -26,8 +26,23 @@ namespace webform
             carrito.agregarItem(articulos[1]);
             carrito.agregarItem(articulos[2]);
 
-            dgdCarrito.DataSource = carrito.Items;
-            dgdCarrito.DataBind();
+            dgvCarrito.DataSource = carrito.Items;
+            dgvCarrito.DataBind();
+            lblTotal.Text = carrito.ImporteTotalMoneda;
         }
+
+        protected void dgdCarrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void dgvCarrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // fila seleccionada
+            int id = (int)dgvCarrito.SelectedDataKey.Value;
+            Response.Redirect("Detalle?id=" + id.ToString());
+        }
+
+
     }
 }

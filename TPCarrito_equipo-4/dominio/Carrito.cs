@@ -14,6 +14,10 @@ namespace dominio
         {
             get { return Items.Sum(i => i.SubTotal); }
         }
+        public string ImporteTotalMoneda
+        {
+            get { return "$ " + ImporteTotal.ToString(); }
+        }
 
         public void agregarItem(Articulo articulo)
         {

@@ -30,5 +30,10 @@ namespace dominio
             get { return Precio * Cantidad; }
         }
 
+        public string SubTotalMoneda
+        {
+            get { return "$ " + SubTotal.ToString(); }
+        }
+
     }
 }
