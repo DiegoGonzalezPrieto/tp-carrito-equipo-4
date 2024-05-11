@@ -30,12 +30,12 @@ namespace webform
 
                 if (datosArticulo != null)
                 {
-                    repRepetidor1.DataSource = UrlImagenes(datosArticulo.Imagenes);
+                    repRepetidor1.DataSource = UrlImagenes();
                     repRepetidor1.DataBind();
                 }
             }
         }
-            public List<string> UrlImagenes(object urlImagen)
+            public List<string> UrlImagenes()
             {
                 List<Imagen> imagenes = datosArticulo.Imagenes;
                 List<string> urls = new List<string>();
