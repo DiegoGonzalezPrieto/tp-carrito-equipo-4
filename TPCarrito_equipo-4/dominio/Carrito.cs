@@ -19,6 +19,8 @@ namespace dominio
             get { return "$ " + ImporteTotal.ToString(); }
         }
 
+        public int CantidadProductos { get { return Items.Sum(i => i.Cantidad); } }
+
         public void agregarItem(Articulo articulo)
         {
             foreach (ItemCarrito item in Items)
