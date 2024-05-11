@@ -12,7 +12,7 @@ namespace webform
 	public partial class Default : System.Web.UI.Page
 	{
 		private List<Articulo> ListarArticulos;
-		protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
 		{
 
 			ArticulosNegocio articulo = new ArticulosNegocio();
@@ -52,14 +52,32 @@ namespace webform
             Response.Redirect("VerDetalle.aspx?id=" + id);
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        private void iniciadorScript()
         {
-            List<Articulo> articulos = (List<Articulo>)Session["listaArticulos"];
-            List<Articulo> listaFiltrada = articulos.FindAll(x=>x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()));
-            repRepetidor2.DataSource = listaFiltrada;
-            repRepetidor2.DataBind();
+            ScriptManager.RegisterStartupScript(this, GetType(), "recortarDescripcion", "recortarDescripcion();", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "iniciarCarousel", "iniciarCarousel();", true);
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
 
+            List<Articulo> listaFiltrada = ((List<Articulo>)Session["listaArticulos"]).FindAll
+                (x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) 
+                || x.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
+
+            if (listaFiltrada.Count == 0)
+            {
+                repRepetidor2.DataSource = listaFiltrada;
+                repRepetidor2.DataBind();
+                lblMensaje.Text = "Resultados no encontrados";
+            }
+            else
+            {      
+                repRepetidor2.DataSource = listaFiltrada;
+                repRepetidor2.DataBind();
+                lblMensaje.Text = "";
+                iniciadorScript();
+            }
+        }
     }
 }
