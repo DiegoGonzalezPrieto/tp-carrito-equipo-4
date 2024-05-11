@@ -6,6 +6,15 @@
 
     <h1 class="display-3">Mi carrito</h1>
 
+    <% if (carrito.CantidadProductos == 0)
+
+        { %>
+    <h3>No hay productos en el carrito</h3>
+
+    <% }
+        else
+        { %>
+
     <asp:GridView ID="dgvCarrito" runat="server" AutoGenerateColumns="false" CssClass="table table-dark table-striped"
         OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged" DataKeyNames="Id">
         <Columns>
@@ -63,5 +72,5 @@
         </div>
     </div>
 
-
+    <% } %>
 </asp:Content>
