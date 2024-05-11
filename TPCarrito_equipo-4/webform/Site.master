@@ -44,12 +44,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="d-flex" role="search">
-
-                        <asp:TextBox Text="Buscar..." type="search" CssClass="form-control me-2" ID="txtBuscar" runat="server"></asp:TextBox>
-
-                        <asp:Button Text="Buscar" type="submit" CssClass="btn btn-outline-success" ID="btnBuscar" runat="server" />
-                    </div>
+                    
                 </div>
             </div>
         </nav>
