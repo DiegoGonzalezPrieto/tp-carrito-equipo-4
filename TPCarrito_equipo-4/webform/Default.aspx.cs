@@ -19,15 +19,16 @@ namespace webform
             //ListarArticulos = articulo.listarConSP();
             ListarArticulos = articulo.listar();
 
-			if (!IsPostBack)
-			{
-                repRepetidor1.DataSource = ListarArticulos;
+            if (!IsPostBack)
+            {
+                repRepetidor1.DataSource = ListarArticulos.Take(3);
                 repRepetidor1.DataBind();
                 repRepetidor2.DataSource = ListarArticulos;
                 repRepetidor2.DataBind();
             }
-			
-		}
+
+
+        }
 
         public string UrlImagen(object urlImagen)
         {

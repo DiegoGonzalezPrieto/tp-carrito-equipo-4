@@ -4,13 +4,22 @@
 
 .carousel-item {
     height: 400px;
-    width: 100%;
+    width: 80%;
 }
 
-.carousel-item img {
-    height: 100%;
-    width: 100%;
-}
+    .carousel-item img {
+        height: 100%;
+        width: auto;
+        margin: auto;
+    }
+
+    .carousel-item h5 {
+        color: black;
+    }
+
+    .carousel-item p {
+        color: black;
+    }
 
 #card {
     height: auto;
@@ -19,12 +28,12 @@
     box-shadow: darkgray 1px 10px 80px 1px
 }
 
-#card img{
-    height:60%;
-    min-height:250px;
-    object-fit:contain;
-    object-position:center;
-}
+    #card img {
+        height: 60%;
+        min-height: 250px;
+        object-fit: contain;
+        object-position: center;
+    }
 
 .cardbody {
     height: 40%;
@@ -34,4 +43,8 @@
     padding-bottom: 5px;
 }
 
-
+#verMas{
+    color: blue;
+    text-decoration: underline;
+    cursor:pointer;
+}
