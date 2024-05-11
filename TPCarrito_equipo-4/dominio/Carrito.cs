@@ -32,6 +32,18 @@ namespace dominio
             Items.Add(new ItemCarrito(articulo));
             return;
         }
+        public void aumentarItemExistente(int id)
+        {
+            foreach (ItemCarrito item in Items)
+            {
+                if (item.Id == id)
+                {
+                    item.Cantidad++;
+                    return;
+                }
+            }
+            throw new Exception("El artículo no está en el carrito.");
+        }
         public void quitarItem(Articulo articulo)
         {
             foreach (ItemCarrito item in Items)
@@ -42,6 +54,34 @@ namespace dominio
                         item.Cantidad--;
                     else
                         Items.Remove(item);
+                    return;
+                }
+            }
+            throw new Exception("El item no se encuentra en el carrito.");
+        }
+        public void quitarItem(int id)
+        {
+            foreach (ItemCarrito item in Items)
+            {
+                if (item.Id == id)
+                {
+                    if (item.Cantidad > 1)
+                        item.Cantidad--;
+                    else
+                        Items.Remove(item);
+                    return;
+                }
+            }
+            throw new Exception("El item no se encuentra en el carrito.");
+        }
+
+        public void eliminarItem(int id)
+        {
+            foreach (ItemCarrito item in Items)
+            {
+                if (item.Id == id)
+                {
+                    Items.Remove(item);
                     return;
                 }
             }

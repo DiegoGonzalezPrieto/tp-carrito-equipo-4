@@ -15,17 +15,27 @@ namespace webform
         public Carrito carrito { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            // todo: chequear post-back
-            carrito = new Carrito();
-            ArticulosNegocio articulosNegocio = new ArticulosNegocio();
+            if (!IsPostBack)
+            {
+                if (Session["carrito"] == null)
+                {
+                    // Datos de simulación
+                    carrito = new Carrito();
+                    ArticulosNegocio articulosNegocio = new ArticulosNegocio();
 
-            List<Articulo> articulos = articulosNegocio.listar();
-            carrito.agregarItem(articulos[0]);
-            carrito.agregarItem(articulos[1]);
-            carrito.agregarItem(articulos[1]);
-            carrito.agregarItem(articulos[1]);
-            carrito.agregarItem(articulos[2]);
+                    List<Articulo> articulos = articulosNegocio.listar();
+                    carrito.agregarItem(articulos[0]);
+                    carrito.agregarItem(articulos[1]);
+                    carrito.agregarItem(articulos[1]);
+                    carrito.agregarItem(articulos[1]);
+                    carrito.agregarItem(articulos[2]);
 
+                    Session.Add("carrito", carrito);
+                }
+
+
+            }
+            carrito = (Carrito)Session["carrito"];
             dgvCarrito.DataSource = carrito.Items;
             dgvCarrito.DataBind();
             lblTotal.Text = carrito.ImporteTotalMoneda;
@@ -40,9 +50,35 @@ namespace webform
         {
             // fila seleccionada
             int id = (int)dgvCarrito.SelectedDataKey.Value;
-            Response.Redirect("Detalle?id=" + id.ToString());
+            Response.Redirect("VerDetalle?id=" + id.ToString());
         }
 
+        protected void lnbBajar_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            int id = int.Parse(lb.CommandArgument);
+            carrito.quitarItem(id);
+            dgvCarrito.DataBind();
+            lblTotal.Text = carrito.ImporteTotalMoneda;
 
+        }
+
+        protected void lnbSubir_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            int id = int.Parse(lb.CommandArgument);
+            carrito.aumentarItemExistente(id);
+            dgvCarrito.DataBind();
+            lblTotal.Text = carrito.ImporteTotalMoneda;
+        }
+
+        protected void lnbEliminar_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            int id = int.Parse(lb.CommandArgument);
+            carrito.eliminarItem(id);
+            dgvCarrito.DataBind();
+            lblTotal.Text = carrito.ImporteTotalMoneda;
+        }
     }
 }
