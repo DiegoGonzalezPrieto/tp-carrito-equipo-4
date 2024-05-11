@@ -42,7 +42,7 @@
                         <div class="cardbody">
                             <h5 class="card-title"><%#Eval("Nombre") %></h5>
                             <p class="card-text descripcion"><span class="texto"><%#Eval("Descripcion") %></span><span class="verMas">... <a id="verMas" data-bs-toggle="modal" data-bs-target="#VerMas<%# Container.ItemIndex %>">Ver más</a></span></p>
-                            <a href="#" class="btn btn-primary">Ver Detalle</a>
+                            <asp:Button Text="Ver Detalle" CssClass="btn btn-primary" ID="btnVerDetalle" runat="server" OnClick="btnVerDetalle_Click" CommandArgument='<%# Eval("Id") %>'/>
                         </div>
                     </div>
                 </div>

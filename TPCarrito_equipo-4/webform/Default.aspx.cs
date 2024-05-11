@@ -43,5 +43,12 @@ namespace webform
                 return "Error de carga.";
             }
         }
+
+        protected void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            Response.Redirect("VerDetalle.aspx?id=" + id);
+        }
     }
 }
