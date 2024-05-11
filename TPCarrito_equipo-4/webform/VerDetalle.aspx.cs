@@ -12,49 +12,50 @@ namespace webform
     public partial class VerDetalle : System.Web.UI.Page
     {
 
-        private List<Articulo> ListarArticulos;
-        public Articulo datosPrimerArticulo { get; set; }
+        private List<Articulo> ListaArticulos;
+        public Articulo datosArticulo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticulosNegocio articulos = new ArticulosNegocio();
-            ListarArticulos = articulos.listar();
-            datosPrimerArticulo = ListarArticulos.FirstOrDefault();
-
+            ListaArticulos = articulos.listar();
+            int idArticulo;
 
             if (!IsPostBack)
             {
-                if (datosPrimerArticulo != null)
+                if (Request.QueryString["id"] != null)
                 {
-                    repRepetidor1.DataSource = UrlImagenes(datosPrimerArticulo.Imagenes);
+                    int.TryParse(Request.QueryString["id"], out idArticulo);
+                    datosArticulo = ListaArticulos.Find(a => a.Id == idArticulo);
+                }
+
+                if (datosArticulo != null)
+                {
+                    repRepetidor1.DataSource = UrlImagenes(datosArticulo.Imagenes);
                     repRepetidor1.DataBind();
-
                 }
             }
-
         }
-
-        public List<string> UrlImagenes(object urlImagen)
-        {
-            List<Imagen> imagenes = datosPrimerArticulo.Imagenes;
-            List<string> urls = new List<string>(); 
-
-            if (imagenes != null && imagenes.Count > 0)
+            public List<string> UrlImagenes(object urlImagen)
             {
-                foreach (Imagen imagen in imagenes)
+                List<Imagen> imagenes = datosArticulo.Imagenes;
+                List<string> urls = new List<string>();
+
+                if (imagenes != null && imagenes.Count > 0)
                 {
-                    urls.Add(imagen.Url);
+                    foreach (Imagen imagen in imagenes)
+                    {
+                        urls.Add(imagen.Url);
+                    }
                 }
+                else
+                {
+                    urls.Add("https://media.istockphoto.com/vectors/default-image-icon-vector-missing-picture-page-for-website-design-or-vector-id1357365823?k=20&m=1357365823&s=612x612&w=0&h=ZH0MQpeUoSHM3G2AWzc8KkGYRg4uP_kuu0Za8GFxdFc=");
+                }
+
+                return urls;
             }
-            else
-            {
-                urls.Add("https://media.istockphoto.com/vectors/default-image-icon-vector-missing-picture-page-for-website-design-or-vector-id1357365823?k=20&m=1357365823&s=612x612&w=0&h=ZH0MQpeUoSHM3G2AWzc8KkGYRg4uP_kuu0Za8GFxdFc=");
-            }
-
-            return urls;
-        }
-
-
 
     }
+
 
 }
