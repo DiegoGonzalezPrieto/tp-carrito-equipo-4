@@ -14,11 +14,14 @@ namespace webform
 
         private List<Articulo> ListaArticulos;
         public Articulo datosArticulo { get; set; }
+        public Carrito carrito { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticulosNegocio articulos = new ArticulosNegocio();
             ListaArticulos = articulos.listar();
             int idArticulo;
+
 
             if (!IsPostBack)
             {
@@ -33,6 +36,16 @@ namespace webform
                     repRepetidor1.DataSource = UrlImagenes();
                     repRepetidor1.DataBind();
                 }
+                if (Session["carrito"] == null)
+                {
+                    carrito = new Carrito();
+                    Session.Add("carrito", carrito);
+                }
+                else
+                {
+                    carrito = (Carrito)Session["carrito"];
+                }
+
             }
         }
         public List<string> UrlImagenes()
@@ -55,6 +68,10 @@ namespace webform
             return urls;
         }
 
+        protected void btnAgregarAlCarrito_Click(object sender, EventArgs e)
+        {
+            carrito.agregarItem(datosArticulo);
+        }
     }
 
 
