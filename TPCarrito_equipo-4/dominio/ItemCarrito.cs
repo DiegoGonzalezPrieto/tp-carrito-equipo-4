@@ -32,7 +32,7 @@ namespace dominio
 
         public string SubTotalMoneda
         {
-            get { return "$ " + SubTotal.ToString(); }
+            get { return (Math.Truncate(100 * SubTotal) / 100).ToString("C"); }
         }
 
     }

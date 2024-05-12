@@ -13,7 +13,7 @@ namespace dominio
     {
         public int Id { get; set; }
         [DisplayName("Código de Artículo")]
-        public  string CodigoArticulo { get; set; }
+        public string CodigoArticulo { get; set; }
         [DisplayName("Nombre Artículo")]
         public string Nombre { get; set; }
         [DisplayName("Descripcíon")]
@@ -27,6 +27,11 @@ namespace dominio
 
         [DisplayName("Precio")]
         public decimal Precio { get; set; }
+
+        public string PrecioMoneda
+        {
+            get { return (Math.Truncate(100 * Precio) / 100).ToString("C"); }
+        }
 
         override public string ToString()
         {

@@ -19,20 +19,21 @@
         OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged" DataKeyNames="Id">
         <Columns>
             <asp:BoundField HeaderText="Artículo" DataField="Nombre" />
-            <asp:BoundField HeaderText="Precio" DataField="Precio" />
             <asp:BoundField HeaderText="Cantidad" DataField="Cantidad" />
-            <asp:BoundField HeaderText="Sub-Total" DataField="SubTotalMoneda" />
+            <asp:BoundField HeaderText="Precio" DataField="PrecioMoneda" />
             <asp:CommandField HeaderText="Detalle" ShowSelectButton="true" SelectText="Ver" ControlStyle-CssClass="btn btn-outline-info fw-bold" />
 
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
 
-                    <asp:LinkButton ID="lnbSubir" OnClick="lnbSubir_Click" CommandName="Subir" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn-primary mx-1" runat="server">
+                    <asp:LinkButton ID="lnbSubir" OnClick="lnbSubir_Click" CommandName="Subir" CommandArgument='<%# Eval("Id") %>' 
+                        CssClass="btn btn-primary mx-1" runat="server" ToolTip="Agregar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
                             <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
                         </svg>
                     </asp:LinkButton>
-                    <asp:LinkButton ID="lnbBajar" OnClick="lnbBajar_Click" CommandName="Bajar" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn-secondary mx-1" runat="server">
+                    <asp:LinkButton ID="lnbBajar" OnClick="lnbBajar_Click" CommandName="Bajar" CommandArgument='<%# Eval("Id") %>' 
+                        CssClass="btn btn-secondary mx-1" runat="server" ToolTip="Quitar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-minus-fill" viewBox="0 0 16 16">
                             <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6 7.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1"/>
                         </svg>
@@ -41,6 +42,7 @@
 
                 </ItemTemplate>
             </asp:TemplateField>
+            <asp:BoundField HeaderText="Sub-Total" DataField="SubTotalMoneda" ItemStyle-CssClass="fw-semibold"/>
 
         </Columns>
     </asp:GridView>
@@ -52,6 +54,7 @@
         <div class="col-1 m-3">
             <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal" onclick="return false;">Comprar</button>
         </div>
+
         <!-- Modal -->
         <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">

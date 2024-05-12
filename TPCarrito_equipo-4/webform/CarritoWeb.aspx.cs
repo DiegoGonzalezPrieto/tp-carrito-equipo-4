@@ -50,7 +50,7 @@ namespace webform
         {
             // fila seleccionada
             int id = (int)dgvCarrito.SelectedDataKey.Value;
-            Response.Redirect("VerDetalle?id=" + id.ToString());
+            Response.Redirect("VerDetalle.aspx?id=" + id.ToString());
         }
 
         protected void lnbBajar_Click(object sender, EventArgs e)

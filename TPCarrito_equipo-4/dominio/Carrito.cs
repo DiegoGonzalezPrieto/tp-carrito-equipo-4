@@ -16,7 +16,7 @@ namespace dominio
         }
         public string ImporteTotalMoneda
         {
-            get { return "$ " + ImporteTotal.ToString(); }
+            get { return (Math.Truncate(ImporteTotal * 100) / 100).ToString("C"); }
         }
 
         public int CantidadProductos { get { return Items.Sum(i => i.Cantidad); } }
