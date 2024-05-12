@@ -10,9 +10,12 @@
 
 
                 <!-- BUSQUEDA -->
-                <div class="d-flex" role="search" style="width: 25%; margin-left: auto; margin-right: 0;">
-                    <asp:TextBox Text="Buscar..." type="search" CssClass="form-control me-2" ID="txtBuscar" runat="server" Style="margin-right: 10px;"></asp:TextBox>
+                <div class="d-flex p-2" role="search" style="width: 25%; margin-left: auto; margin-right: 0;">
+                    <asp:TextBox placeholder="Buscar..." type="search" CssClass="form-control me-2" ID="txtBuscar" runat="server" Style="margin-right: 10px;"></asp:TextBox>
                     <asp:Button Text="Buscar" type="submit" CssClass="btn btn-outline-success" ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" />
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <asp:Label ID="lblCabezera" runat="server" CssClass="text-secondary-emphasis" style="font-size: 30px;"></asp:Label>
                 </div>
                 <!-- CAROUSEL -->
                 <div>
@@ -78,7 +81,10 @@
                     </asp:Repeater>
                 </div>
                 <div style="display: flex; justify-content: center;">
-                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger"></asp:Label>
+                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger" style="font-style: italic"></asp:Label>
+                </div>
+                <div class="d-flex p-2" style="display: flex; justify-content: center;">
+                     <asp:Button Text="Volver" type="submit" CssClass="btn btn-secondary" ID="btnVolver" runat="server" OnClick="btnVolver_Click" />
                 </div>
 
             </ContentTemplate>

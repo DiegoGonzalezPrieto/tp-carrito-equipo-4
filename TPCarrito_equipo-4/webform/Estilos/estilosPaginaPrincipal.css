@@ -7,19 +7,24 @@
     width: 80%;
 }
 
-    .carousel-item img {
-        height: 100%;
-        width: auto;
-        margin: auto;
-    }
+.carousel-item img {
+    height: 100%;
+    width: auto;
+    margin: auto;
+}
 
-    .carousel-item h5 {
-        color: black;
-    }
+.carousel-item h5 {
+    color: black;
+}
 
-    .carousel-item p {
-        color: black;
-    }
+.carousel-item p {
+    color: black;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(100%);
+}
+
 
 #card {
     height: auto;
