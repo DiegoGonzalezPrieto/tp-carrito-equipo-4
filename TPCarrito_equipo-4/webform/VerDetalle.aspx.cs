@@ -22,32 +22,29 @@ namespace webform
             ListaArticulos = articulos.listar();
             int idArticulo;
 
+            if (Request.QueryString["id"] != null)
+            {
+                int.TryParse(Request.QueryString["id"], out idArticulo);
+                datosArticulo = ListaArticulos.Find(a => a.Id == idArticulo);
+            }
+
+            if (Session["carrito"] != null)
+            {
+                carrito = (Carrito)Session["carrito"];
+            }
 
             if (!IsPostBack)
             {
-                if (Request.QueryString["id"] != null)
-                {
-                    int.TryParse(Request.QueryString["id"], out idArticulo);
-                    datosArticulo = ListaArticulos.Find(a => a.Id == idArticulo);
-                }
 
                 if (datosArticulo != null)
                 {
                     repRepetidor1.DataSource = UrlImagenes();
                     repRepetidor1.DataBind();
                 }
-                if (Session["carrito"] == null)
-                {
-                    carrito = new Carrito();
-                    Session.Add("carrito", carrito);
-                }
-                else
-                {
-                    carrito = (Carrito)Session["carrito"];
-                }
 
             }
         }
+
         public List<string> UrlImagenes()
         {
             List<Imagen> imagenes = datosArticulo.Imagenes;
