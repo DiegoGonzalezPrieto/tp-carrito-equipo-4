@@ -13,6 +13,9 @@ namespace webform
     public partial class CarritoWeb : System.Web.UI.Page
     {
         public Carrito carrito { get; set; }
+        public bool agregado { get; set; }
+        public bool quitado { get; set; }
+        public bool eliminado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -60,6 +63,7 @@ namespace webform
             carrito.quitarItem(id);
             dgvCarrito.DataBind();
             lblTotal.Text = carrito.ImporteTotalMoneda;
+            quitado = true;
 
         }
 
@@ -70,6 +74,7 @@ namespace webform
             carrito.aumentarItemExistente(id);
             dgvCarrito.DataBind();
             lblTotal.Text = carrito.ImporteTotalMoneda;
+            agregado = true;
         }
 
         protected void lnbEliminar_Click(object sender, EventArgs e)
@@ -79,6 +84,7 @@ namespace webform
             carrito.eliminarItem(id);
             dgvCarrito.DataBind();
             lblTotal.Text = carrito.ImporteTotalMoneda;
+            eliminado = true;
         }
     }
 }

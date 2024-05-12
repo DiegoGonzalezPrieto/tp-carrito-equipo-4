@@ -15,6 +15,24 @@
         else
         { %>
 
+        <% if (agregado) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Producto agregado al carrito.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+    <% } else if (quitado) { %>
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+        Producto restado del carrito.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+        <% } else if (eliminado)
+            { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Producto eliminado del carrito.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+</div>
+            <%} %>
+
     <asp:GridView ID="dgvCarrito" runat="server" AutoGenerateColumns="false" CssClass="table table-dark table-striped"
         OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged" DataKeyNames="Id">
         <Columns>
@@ -26,13 +44,13 @@
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
 
-                    <asp:LinkButton ID="lnbSubir" OnClick="lnbSubir_Click" CommandName="Subir" CommandArgument='<%# Eval("Id") %>' 
-                        CssClass="btn btn-primary mx-1" runat="server" ToolTip="Agregar">
+                    <asp:LinkButton ID="lnbSubir" OnClick="lnbSubir_Click" CommandName="Subir" CommandArgument='<%# Eval("Id") %>'
+                        CssClass="btn btn-success mx-1" runat="server" ToolTip="Agregar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
                             <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
                         </svg>
                     </asp:LinkButton>
-                    <asp:LinkButton ID="lnbBajar" OnClick="lnbBajar_Click" CommandName="Bajar" CommandArgument='<%# Eval("Id") %>' 
+                    <asp:LinkButton ID="lnbBajar" OnClick="lnbBajar_Click" CommandName="Bajar" CommandArgument='<%# Eval("Id") %>'
                         CssClass="btn btn-secondary mx-1" runat="server" ToolTip="Quitar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-minus-fill" viewBox="0 0 16 16">
                             <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6 7.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1"/>
@@ -42,7 +60,7 @@
 
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField HeaderText="Sub-Total" DataField="SubTotalMoneda" ItemStyle-CssClass="fw-semibold"/>
+            <asp:BoundField HeaderText="Sub-Total" DataField="SubTotalMoneda" ItemStyle-CssClass="fw-semibold" />
 
         </Columns>
     </asp:GridView>
@@ -52,7 +70,7 @@
             <asp:Label ID="lblTotal" runat="server"></asp:Label>
         </div>
         <div class="col-1 m-3">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal" onclick="return false;">Comprar</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" onclick="return false;">Comprar</button>
         </div>
 
         <!-- Modal -->
@@ -76,4 +94,6 @@
     </div>
 
     <% } %>
+
+
 </asp:Content>
