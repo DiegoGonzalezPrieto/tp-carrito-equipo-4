@@ -47,26 +47,33 @@
                 </button>
             </div>
         </div>
-
         <div class="col-md-6">
+
             <div id="cardInfoArticulo" class="card shadow-sm">
-                <div class="card-body">
-                    <h1>Detalles del artículo:</h1>
-                    <dl>
-                        <dt>Nombre:</dt>
-                        <dd>- <%= datosArticulo.Nombre %></dd>
-                        <dt>Precio:</dt>
-                        <dd>- <%= datosArticulo.Precio %></dd>
-                        <dt>Marca:</dt>
-                        <dd>- <%= datosArticulo.Marca %></dd>
-                        <dt>Categoría:</dt>
-                        <dd>- <%= datosArticulo.Categoria %></dd>
-                        <dt>Descripción:</dt>
-                        <dd>- <%= datosArticulo.Descripcion %></dd>
-                    </dl>
+                        <h1 class="text-center">Detalles del artículo</h1>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <dl>
+                            <dt>Nombre:</dt>
+                            <dd>- <%= datosArticulo.Nombre %></dd>
+                            <dt>Marca:</dt>
+                            <dd>- <%= datosArticulo.Marca %></dd>
+                            <dt>Categoría:</dt>
+                            <dd>- <%= datosArticulo.Categoria %></dd>
+                            <dt>Descripción:</dt>
+                            <dd>- <%= datosArticulo.Descripcion %></dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>Precio:</dt>
+                            <dd class="fs-1">$<%= datosArticulo.Precio %></dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -75,6 +82,7 @@
         <div class="col">
             <div class="d-grid gap-2"> 
                 <asp:Button ID="btnAgregarAlCarrito" CssClass="btn btn-primary fw-bold" runat= "server" OnClick="btnAgregarAlCarrito_Click" Text="Agregar al carrito"/>
+                <asp:Button ID="btnQuitarDelCarrito" CssClass="btn btn-secondary fw-bold" runat= "server" OnClick="btnQuitarDelCarrito_Click" Text="Quitar del carrito"/>
             </div>
         </div>
     </div>

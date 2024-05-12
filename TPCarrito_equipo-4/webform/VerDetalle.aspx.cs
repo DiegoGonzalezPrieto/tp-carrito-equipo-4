@@ -69,6 +69,14 @@ namespace webform
         {
             carrito.agregarItem(datosArticulo);
         }
+
+        protected void btnQuitarDelCarrito_Click(object sender, EventArgs e)
+        {
+            if (carrito.Items.Any(item => item.Id == datosArticulo.Id))
+            {
+                carrito.quitarItem(datosArticulo);
+            }
+        }
     }
 
 
