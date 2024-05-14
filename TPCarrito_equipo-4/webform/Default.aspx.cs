@@ -14,24 +14,49 @@ namespace webform
         private List<Articulo> ListarArticulos;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+                ArticulosNegocio articulo = new ArticulosNegocio();
+                List<Marca> marcas = MarcasNegocio.ListaMarcas();
+                List<Categoria> categorias = CategoriasNegocio.ListaCategorias();
+                //ListarArticulos = articulo.listarConSP();
+                ListarArticulos = articulo.listar();
+                Session.Add("listaArticulos", articulo.listar());
+               
 
-            ArticulosNegocio articulo = new ArticulosNegocio();
-            //ListarArticulos = articulo.listarConSP();
-            Session.Add("listaArticulos", articulo.listar());
-            ListarArticulos = articulo.listar();
 
 
+                if (!IsPostBack)
+                {
+                    Random random = new Random();
+                    repRepetidor1.DataSource = ListarArticulos.OrderBy(x => random.Next()).Take(4);
+                    repRepetidor1.DataBind();
+                    repRepetidor2.DataSource = Session["listaArticulos"];
+                    repRepetidor2.DataBind();
+                }
 
-            if (!IsPostBack)
-            {
-                Random random = new Random();
-                repRepetidor1.DataSource = ListarArticulos.OrderBy(x => random.Next()).Take(4);
-                repRepetidor1.DataBind();
-                repRepetidor2.DataSource = Session["listaArticulos"];
-                repRepetidor2.DataBind();
-            }
+                if (!IsPostBack)
+                {
+
+                    ddlMarca.DataSource = marcas;
+                    ddlMarca.DataTextField = "Nombre";
+                    ddlMarca.DataValueField = "Id";
+
+                    ddlMarca.DataBind();
+
+                    ddlMarca.Items.Insert(0, new ListItem(String.Empty, String.Empty));
+
+                    ddlCategoria.DataSource = categorias;
+                    ddlCategoria.DataTextField = "Nombre";
+                    ddlCategoria.DataValueField = "Id";
+
+                    ddlCategoria.DataBind();
+
+                    ddlCategoria.Items.Insert(0, new ListItem(String.Empty, String.Empty));
+                }
+            
 
             btnVolver.Visible = false;
+            btnFiltrar.Visible = false;
 
         }
 
@@ -64,10 +89,35 @@ namespace webform
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            string textoBusqueda = txtBuscar.Text.ToUpper();
 
             List<Articulo> listaFiltrada = ((List<Articulo>)Session["listaArticulos"]).FindAll
-            (x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper())
-            || x.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
+            (x => x.Nombre.ToUpper().Contains(textoBusqueda)
+            || x.Descripcion.ToUpper().Contains(textoBusqueda));
+
+            filtrado(listaFiltrada);
+            txtAvanzado.Text = textoBusqueda;
+            comprobacion();
+            
+
+        }
+
+        protected void btnBuscarAvanzado_Click(object sender, EventArgs e)
+        {
+
+            string textoBusqueda = txtAvanzado.Text.ToUpper();
+            string marcaSeleccionada = ddlMarca.SelectedValue;
+            string categoriaSeleccionada = ddlCategoria.SelectedValue;
+            decimal precioMayor = string.IsNullOrEmpty(txtPrecioMayor.Text) ? 0 : decimal.Parse(txtPrecioMayor.Text);
+            decimal precioMenor = string.IsNullOrEmpty(txtPrecioMenor.Text) ? decimal.MaxValue : decimal.Parse(txtPrecioMenor.Text);
+
+
+            List<Articulo> listaFiltrada = ((List<Articulo>)Session["listaArticulos"]).FindAll(x =>
+            (string.IsNullOrEmpty(textoBusqueda) || x.Nombre.ToUpper().Contains(textoBusqueda)) &&
+            (string.IsNullOrEmpty(textoBusqueda) || x.Descripcion.ToUpper().Contains(textoBusqueda)) &&
+            (string.IsNullOrEmpty(marcaSeleccionada) || x.Marca.Id.ToString() == marcaSeleccionada) &&
+            (string.IsNullOrEmpty(categoriaSeleccionada) || x.Categoria.Id.ToString() == categoriaSeleccionada) &&
+            (x.Precio >= precioMayor && x.Precio <= precioMenor));
 
             filtrado(listaFiltrada);
 
@@ -75,7 +125,7 @@ namespace webform
 
         }
 
-        private void filtrado(List<Articulo> listaFiltrada)
+            private void filtrado(List<Articulo> listaFiltrada)
         {
             if (listaFiltrada.Count == 0)
             {
@@ -95,6 +145,7 @@ namespace webform
                 iniciadorScript();
             }
 
+            btnFiltrar.Visible = true;
             btnVolver.Visible = true;
         }
 
@@ -106,6 +157,7 @@ namespace webform
                 btnVolver.Visible = false;
                 ScriptManager.RegisterStartupScript(this, this.GetType(),
                     "ocultarCarrusel", "document.getElementById('carouselExampleAutoplaying').style.display = 'block';", true);
+                iniciadorScript();
             }
             else
             {
@@ -117,15 +169,13 @@ namespace webform
         {
             txtBuscar.Text = "";
 
-            List<Articulo> listaFiltrada = ((List<Articulo>)Session["listaArticulos"]).FindAll
-           (x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper())
-           || x.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
-
-            filtrado(listaFiltrada);
+            repRepetidor2.DataSource = ((List<Articulo>)Session["listaArticulos"]);
+            repRepetidor2.DataBind();
 
             comprobacion();
 
             btnVolver.Visible = false;
+            btnFiltrar.Visible = false;
         }
     }
 }

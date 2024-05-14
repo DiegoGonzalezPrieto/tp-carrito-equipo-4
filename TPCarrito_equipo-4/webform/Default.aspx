@@ -8,15 +8,36 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
 
-
                 <!-- BUSQUEDA -->
                 <div class="d-flex p-2" role="search" style="width: 25%; margin-left: auto; margin-right: 0;">
                     <asp:TextBox placeholder="Buscar..." type="search" CssClass="form-control me-2" ID="txtBuscar" runat="server" Style="margin-right: 10px;"></asp:TextBox>
                     <asp:Button Text="Buscar" type="submit" CssClass="btn btn-outline-success" ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" />
                 </div>
-                <div style="display: flex; justify-content: center;">
-                    <asp:Label ID="lblCabezera" runat="server" CssClass="text-secondary-emphasis" style="font-size: 30px;"></asp:Label>
+                <!-- BOTON FILTRADO -->
+                <div class="d-flex" role="search" style="width: 25%; margin-left: auto; margin-right: 10px; justify-content: end">
+                    <asp:Button Text="Filtrar" ID="btnFiltrar" CssClass="btn btn-secondary" OnClientClick="return false;" runat="server" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" />
                 </div>
+                <!-- Modal de lado -->
+                <div class="offcanvas offcanvas-end d-flex p-2" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Búsqueda avanzada</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="d-flex flex-column p-2" role="search" style="width: 100%; margin-left: auto; margin-right: 0;">
+                            <asp:TextBox type="search" CssClass="form-control me-2" ID="txtAvanzado" runat="server" Style="margin-bottom: 10px;"></asp:TextBox>
+                            <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control me-2" Style="margin-bottom: 10px;"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control me-2" Style="margin-bottom: 10px;"></asp:DropDownList>
+                            <asp:TextBox placeholder="Precio mayor a" type="number" CssClass="form-control me-2" ID="txtPrecioMayor" runat="server" Style="margin-bottom: 10px;"></asp:TextBox>
+                            <asp:TextBox placeholder="Precio menor a" type="number" CssClass="form-control me-2" ID="txtPrecioMenor" runat="server" Style="margin-bottom: 10px;"></asp:TextBox>
+                            <asp:Button Text="Aplicar Filtro" type="submit" CssClass="btn btn-outline-success" ID="btnBuscarAvanzado" runat="server" OnClick="btnBuscarAvanzado_Click" />
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <asp:Label ID="lblCabezera" runat="server" CssClass="text-secondary-emphasis" Style="font-size: 30px;"></asp:Label>
+                </div>
+
                 <!-- CAROUSEL -->
                 <div>
                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -42,16 +63,17 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-
                 </div>
 
                 <!-- TARJETAS  -->
-                <div id="tarjetas" class="row row-cols-1 row-cols-md-4 g-6">
+                <div id="tarjetas" class="row row-cols-1 row-cols-md-4 g-6  p-2">
                     <asp:Repeater runat="server" ID="repRepetidor2">
                         <ItemTemplate>
                             <div class="col">
                                 <div class="card" id="card">
-                                    <img src='<%# UrlImagen(Eval("Imagenes")) %>' class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';">
+                                    <a href="VerDetalle.aspx?id=<%#Eval("Id") %>">
+                                        <img src='<%# UrlImagen(Eval("Imagenes")) %>' class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';">
+                                    </a>
                                     <div class="cardbody">
                                         <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                         <p class="card-text descripcion"><span class="texto"><%#Eval("Descripcion") %></span><span class="verMas">... <a id="verMas" data-bs-toggle="modal" data-bs-target="#VerMas<%# Container.ItemIndex %>">Ver más</a></span></p>
@@ -81,10 +103,10 @@
                     </asp:Repeater>
                 </div>
                 <div style="display: flex; justify-content: center;">
-                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger" style="font-style: italic"></asp:Label>
+                    <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger" Style="font-style: italic"></asp:Label>
                 </div>
                 <div class="d-flex p-2" style="display: flex; justify-content: center;">
-                     <asp:Button Text="Volver" type="submit" CssClass="btn btn-secondary" ID="btnVolver" runat="server" OnClick="btnVolver_Click" />
+                    <asp:Button Text="Volver" type="submit" CssClass="btn btn-secondary" ID="btnVolver" runat="server" OnClick="btnVolver_Click" />
                 </div>
 
             </ContentTemplate>
