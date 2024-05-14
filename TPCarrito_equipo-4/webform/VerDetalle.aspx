@@ -20,10 +20,14 @@
     <% }
         else
         { %>
-               <div class="container my-4 text-center">
-    <p class="fs-1 fw-bold"><%= datosArticulo.Nombre %></p>
+<div class="container my-4">
+    <div class="d-grid">      
+        <div class="bg-dark text-white fs-1 fw-bold text-center p-3 border rounded shadow">
+            <%= datosArticulo.Nombre %>
+        </div>
+    </div>
 </div>
-
+        
 <div class="container my-4">
     <div class="row">
         <div class="col-md-6">
@@ -36,7 +40,10 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                </div>
+                    </div>
+                    <% if (datosArticulo.Imagenes.Count > 1)
+                        {%>
+                
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -45,11 +52,15 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+                 <% } %>
             </div>
         </div>
-        <div class="col-md-6">
+       
 
+        <div class="col-md-6">
+            
             <div id="cardInfoArticulo" class="card shadow-sm">
+
                         <h1 class="text-center">Detalles del artículo</h1>
                 <div class="card-body d-flex justify-content-between">
                     <div>
@@ -65,23 +76,21 @@
                         </dl>
                     </div>
                     <div>
-                        <dl>
-                            <dt>Precio:</dt>
-                            <dd class="fs-1">$<%= datosArticulo.Precio %></dd>
-                        </dl>
+                            <h6 class="fw-bold text-center">Precio:</h6>
+                            <button type="button" class="btn btn-outline-primary btn-lg fs-2 fw-bold" disabled><%= datosArticulo.PrecioMoneda %></button>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
 
     </div>
-</div>
 
 <div class="container my-4">
     <div class="row">
         <div class="col">
             <div class="d-grid gap-2"> 
-                <asp:Button ID="btnAgregarAlCarrito" CssClass="btn btn-primary fw-bold" runat= "server" OnClick="btnAgregarAlCarrito_Click" Text="Agregar al carrito"/>
+                <asp:Button ID="btnAgregarAlCarrito" CssClass="btn btn-primary fw-bold" runat= "server" OnClick="btnAgregarAlCarrito_Click"/>
                 <asp:Button ID="btnQuitarDelCarrito" CssClass="btn btn-secondary fw-bold" runat= "server" OnClick="btnQuitarDelCarrito_Click" Text="Quitar del carrito"/>
             </div>
         </div>

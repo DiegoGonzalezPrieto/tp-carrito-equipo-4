@@ -15,12 +15,14 @@ namespace webform
         private List<Articulo> ListaArticulos;
         public Articulo datosArticulo { get; set; }
         public Carrito carrito { get; set; }
+        public int CantidadEnCarrito { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticulosNegocio articulos = new ArticulosNegocio();
             ListaArticulos = articulos.listar();
             int idArticulo;
+            CantidadEnCarrito = 0;
 
             if (Request.QueryString["id"] != null)
             {
@@ -31,17 +33,20 @@ namespace webform
             if (Session["carrito"] != null)
             {
                 carrito = (Carrito)Session["carrito"];
+                CantidadEnCarrito = carrito.ObtenerCantidadEnCarrito(datosArticulo);
+
             }
 
             if (!IsPostBack)
             {
-
+                
                 if (datosArticulo != null)
                 {
                     repRepetidor1.DataSource = UrlImagenes();
                     repRepetidor1.DataBind();
                 }
 
+                btnAgregarAlCarrito.Text = $"Agregar al carrito ({CantidadEnCarrito})";
             }
         }
 
@@ -68,6 +73,8 @@ namespace webform
         protected void btnAgregarAlCarrito_Click(object sender, EventArgs e)
         {
             carrito.agregarItem(datosArticulo);
+           CantidadEnCarrito = carrito.ObtenerCantidadEnCarrito(datosArticulo);
+                btnAgregarAlCarrito.Text = $"Agregar al carrito ({CantidadEnCarrito})";
         }
 
         protected void btnQuitarDelCarrito_Click(object sender, EventArgs e)
@@ -75,9 +82,11 @@ namespace webform
             if (carrito.Items.Any(item => item.Id == datosArticulo.Id))
             {
                 carrito.quitarItem(datosArticulo);
+            CantidadEnCarrito = carrito.ObtenerCantidadEnCarrito(datosArticulo);
+                    btnAgregarAlCarrito.Text = $"Agregar al carrito ({CantidadEnCarrito})";
+
             }
         }
     }
-
 
 }

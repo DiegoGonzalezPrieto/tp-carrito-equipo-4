@@ -22,3 +22,9 @@ C:\Users\Diego_prieto\Documents\TUP\tp-carrito-equipo-4\TPCarrito_equipo-4\domin
 C:\Users\Diego_prieto\Documents\TUP\tp-carrito-equipo-4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\Diego_prieto\Documents\TUP\tp-carrito-equipo-4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.dll
 C:\Users\Diego_prieto\Documents\TUP\tp-carrito-equipo-4\TPCarrito_equipo-4\dominio\obj\Debug\dominio.pdb
+C:\Users\lucho\Desktop\Code\UTN\3°Cuatrimestre\Programacion III\TP4 WebForm\TPCarrito_equipo-4\dominio\bin\Debug\dominio.dll
+C:\Users\lucho\Desktop\Code\UTN\3°Cuatrimestre\Programacion III\TP4 WebForm\TPCarrito_equipo-4\dominio\bin\Debug\dominio.pdb
+C:\Users\lucho\Desktop\Code\UTN\3°Cuatrimestre\Programacion III\TP4 WebForm\TPCarrito_equipo-4\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\lucho\Desktop\Code\UTN\3°Cuatrimestre\Programacion III\TP4 WebForm\TPCarrito_equipo-4\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\lucho\Desktop\Code\UTN\3°Cuatrimestre\Programacion III\TP4 WebForm\TPCarrito_equipo-4\dominio\obj\Debug\dominio.dll
+C:\Users\lucho\Desktop\Code\UTN\3°Cuatrimestre\Programacion III\TP4 WebForm\TPCarrito_equipo-4\dominio\obj\Debug\dominio.pdb

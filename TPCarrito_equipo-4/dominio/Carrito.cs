@@ -89,5 +89,17 @@ namespace dominio
             }
             throw new Exception("El item no se encuentra en el carrito.");
         }
+        public int ObtenerCantidadEnCarrito(Articulo articulo)
+        {
+            foreach (ItemCarrito item in Items)
+            {
+                if (item.Id == articulo.Id)
+                {
+                    return item.Cantidad;
+                }
+            }
+            return 0;
+        }
     }
+    
 }
