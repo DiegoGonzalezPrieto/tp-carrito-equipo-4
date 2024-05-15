@@ -14,46 +14,44 @@ namespace webform
         private List<Articulo> ListarArticulos;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                ArticulosNegocio articulo = new ArticulosNegocio();
-                List<Marca> marcas = MarcasNegocio.ListaMarcas();
-                List<Categoria> categorias = CategoriasNegocio.ListaCategorias();
-                //ListarArticulos = articulo.listarConSP();
-                ListarArticulos = articulo.listar();
-                Session.Add("listaArticulos", articulo.listar());
-               
+
+            ArticulosNegocio articulo = new ArticulosNegocio();
+            List<Marca> marcas = MarcasNegocio.ListaMarcas();
+            List<Categoria> categorias = CategoriasNegocio.ListaCategorias();
+            //ListarArticulos = articulo.listarConSP();
+            ListarArticulos = articulo.listar();
+            Session.Add("listaArticulos", articulo.listar());
 
 
 
-                if (!IsPostBack)
-                {
-                    Random random = new Random();
-                    repRepetidor1.DataSource = ListarArticulos.OrderBy(x => random.Next()).Take(4);
-                    repRepetidor1.DataBind();
-                    repRepetidor2.DataSource = Session["listaArticulos"];
-                    repRepetidor2.DataBind();
-                }
 
-                if (!IsPostBack)
-                {
+            if (!IsPostBack)
+            {
+                Random random = new Random();
+                repRepetidor1.DataSource = ListarArticulos.OrderBy(x => random.Next()).Take(4);
+                repRepetidor1.DataBind();
+                repRepetidor2.DataSource = Session["listaArticulos"];
+                repRepetidor2.DataBind();
+            }
 
-                    ddlMarca.DataSource = marcas;
-                    ddlMarca.DataTextField = "Nombre";
-                    ddlMarca.DataValueField = "Id";
+            if (!IsPostBack)
+            {
 
-                    ddlMarca.DataBind();
+                ddlMarca.DataSource = marcas;
+                ddlMarca.DataTextField = "Nombre";
+                ddlMarca.DataValueField = "Id";
+                ddlMarca.DataBind();
 
-                    ddlMarca.Items.Insert(0, new ListItem(String.Empty, String.Empty));
+                ddlMarca.Items.Insert(0, new ListItem(String.Empty, String.Empty));
 
-                    ddlCategoria.DataSource = categorias;
-                    ddlCategoria.DataTextField = "Nombre";
-                    ddlCategoria.DataValueField = "Id";
+                ddlCategoria.DataSource = categorias;
+                ddlCategoria.DataTextField = "Nombre";
+                ddlCategoria.DataValueField = "Id";
+                ddlCategoria.DataBind();
 
-                    ddlCategoria.DataBind();
+                ddlCategoria.Items.Insert(0, new ListItem(String.Empty, String.Empty));
+            }
 
-                    ddlCategoria.Items.Insert(0, new ListItem(String.Empty, String.Empty));
-                }
-            
 
             btnVolver.Visible = false;
             btnFiltrar.Visible = false;
@@ -81,12 +79,6 @@ namespace webform
             Response.Redirect("VerDetalle.aspx?id=" + id);
         }
 
-        private void iniciadorScript()
-        {
-            ScriptManager.RegisterStartupScript(this, GetType(), "recortarDescripcion", "recortarDescripcion();", true);
-            ScriptManager.RegisterStartupScript(this, GetType(), "iniciarCarousel", "iniciarCarousel();", true);
-        }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             string textoBusqueda = txtBuscar.Text.ToUpper();
@@ -98,26 +90,24 @@ namespace webform
             filtrado(listaFiltrada);
             txtAvanzado.Text = textoBusqueda;
             comprobacion();
-            
+
 
         }
 
         protected void btnBuscarAvanzado_Click(object sender, EventArgs e)
         {
-
             string textoBusqueda = txtAvanzado.Text.ToUpper();
             string marcaSeleccionada = ddlMarca.SelectedValue;
             string categoriaSeleccionada = ddlCategoria.SelectedValue;
             decimal precioMayor = string.IsNullOrEmpty(txtPrecioMayor.Text) ? 0 : decimal.Parse(txtPrecioMayor.Text);
             decimal precioMenor = string.IsNullOrEmpty(txtPrecioMenor.Text) ? decimal.MaxValue : decimal.Parse(txtPrecioMenor.Text);
 
-
-            List<Articulo> listaFiltrada = ((List<Articulo>)Session["listaArticulos"]).FindAll(x =>
-            (string.IsNullOrEmpty(textoBusqueda) || x.Nombre.ToUpper().Contains(textoBusqueda)) &&
-            (string.IsNullOrEmpty(textoBusqueda) || x.Descripcion.ToUpper().Contains(textoBusqueda)) &&
+            List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
+            List<Articulo> listaFiltrada = listaArticulos.FindAll(x => (string.IsNullOrEmpty(textoBusqueda) || x.Nombre.ToUpper().Contains(textoBusqueda.ToUpper())
+            || x.Descripcion.ToUpper().Contains(textoBusqueda.ToUpper())) &&
             (string.IsNullOrEmpty(marcaSeleccionada) || x.Marca.Id.ToString() == marcaSeleccionada) &&
             (string.IsNullOrEmpty(categoriaSeleccionada) || x.Categoria.Id.ToString() == categoriaSeleccionada) &&
-            (x.Precio >= precioMayor && x.Precio <= precioMenor));
+            (x.Precio >= precioMayor && x.Precio <= precioMenor)).ToList();
 
             filtrado(listaFiltrada);
 
@@ -125,7 +115,7 @@ namespace webform
 
         }
 
-            private void filtrado(List<Articulo> listaFiltrada)
+        private void filtrado(List<Articulo> listaFiltrada)
         {
             if (listaFiltrada.Count == 0)
             {
@@ -142,7 +132,6 @@ namespace webform
                 repRepetidor2.DataBind();
                 lblMensaje.Text = "";
                 lblMensaje.Attributes.Add("style", "margin: 0px;");
-                iniciadorScript();
             }
 
             btnFiltrar.Visible = true;
@@ -155,9 +144,9 @@ namespace webform
             {
                 lblCabezera.Text = "";
                 btnVolver.Visible = false;
+                btnFiltrar.Visible = false;
                 ScriptManager.RegisterStartupScript(this, this.GetType(),
                     "ocultarCarrusel", "document.getElementById('carouselExampleAutoplaying').style.display = 'block';", true);
-                iniciadorScript();
             }
             else
             {
@@ -168,6 +157,11 @@ namespace webform
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             txtBuscar.Text = "";
+            txtAvanzado.Text = "";
+            ddlMarca.Text = "";
+            ddlCategoria.Text = "";
+            txtPrecioMayor.Text = "";
+            txtPrecioMenor.Text = "";
 
             repRepetidor2.DataSource = ((List<Articulo>)Session["listaArticulos"]);
             repRepetidor2.DataBind();

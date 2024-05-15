@@ -29,10 +29,3 @@ window.onload = function () {
     recortarDescripcion();
     iniciarCarousel();
 };
-
-Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
-    setTimeout(function () {
-        recortarDescripcion();
-        iniciarCarousel();
-    }, 100);
-});
