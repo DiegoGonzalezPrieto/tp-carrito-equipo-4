@@ -91,6 +91,9 @@ namespace dominio
         }
         public int ObtenerCantidadEnCarrito(Articulo articulo)
         {
+            if (articulo == null)
+                return 0;
+
             foreach (ItemCarrito item in Items)
             {
                 if (item.Id == articulo.Id)

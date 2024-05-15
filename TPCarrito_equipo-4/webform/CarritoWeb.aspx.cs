@@ -22,17 +22,8 @@ namespace webform
             {
                 if (Session["carrito"] == null)
                 {
-                    // Datos de simulación
+                    // por las dudas instanciar el carrito
                     carrito = new Carrito();
-                    ArticulosNegocio articulosNegocio = new ArticulosNegocio();
-
-                    List<Articulo> articulos = articulosNegocio.listar();
-                    carrito.agregarItem(articulos[0]);
-                    carrito.agregarItem(articulos[1]);
-                    carrito.agregarItem(articulos[1]);
-                    carrito.agregarItem(articulos[1]);
-                    carrito.agregarItem(articulos[2]);
-
                     Session.Add("carrito", carrito);
                 }
 
