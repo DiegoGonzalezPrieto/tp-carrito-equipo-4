@@ -25,10 +25,16 @@ namespace webform
             List<Marca> marcas = MarcasNegocio.ListaMarcas();
             List<Categoria> categorias = CategoriasNegocio.ListaCategorias();
             //ListarArticulos = articulo.listarConSP();
-
-            // TODO : si Categoria not null, llamar a articulo.listar(Categoria) -- que devuelva solo articulos de esa categoria
-            ListarArticulos = articulo.listar();
-            Session.Add("listaArticulos", articulo.listar());
+            if (Categoria != null)
+            {
+                ListarArticulos = articulo.listarArticulosDeCategoria(Categoria);
+                Session.Add("listaArticulos", articulo.listarArticulosDeCategoria(Categoria));
+            }
+            else
+            {
+                ListarArticulos = articulo.listar();
+                Session.Add("listaArticulos", articulo.listar());
+            }
 
 
 
