@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\",
+  "WorkspaceRootPath": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\lucho\\desktop\\code\\utn\\3\u00B0cuatrimestre\\programacion iii\\tp4 webform\\tpcarrito_equipo-4\\webform\\carritoweb.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\carritoweb.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\lucho\\desktop\\code\\utn\\3\u00B0cuatrimestre\\programacion iii\\tp4 webform\\tpcarrito_equipo-4\\webform\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\lucho\\desktop\\code\\utn\\3\u00B0cuatrimestre\\programacion iii\\tp4 webform\\tpcarrito_equipo-4\\webform\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\diego_prieto\\documents\\tup\\tp-carrito-equipo-4\\tpcarrito_equipo-4\\webform\\verproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\verproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\diego_prieto\\documents\\tup\\tp-carrito-equipo-4\\tpcarrito_equipo-4\\webform\\verproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\verproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\diego_prieto\\documents\\tup\\tp-carrito-equipo-4\\tpcarrito_equipo-4\\webform\\carritoweb.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\carritoweb.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +30,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\Default.aspx",
+              "DocumentMoniker": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\Default.aspx",
               "RelativeDocumentMoniker": "webform\\Default.aspx",
-              "ToolTip": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\Default.aspx*",
+              "ToolTip": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\Default.aspx*",
               "RelativeToolTip": "webform\\Default.aspx*",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -40,46 +48,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Default.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\Default.aspx.cs",
               "RelativeDocumentMoniker": "webform\\Default.aspx.cs",
-              "ToolTip": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\Default.aspx.cs*",
-              "RelativeToolTip": "webform\\Default.aspx.cs*",
-              "ViewState": "AQIAACIAAAAAAAAAAAAkwDcAAAAQAAAA",
+              "ToolTip": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\Default.aspx.cs",
+              "RelativeToolTip": "webform\\Default.aspx.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-15T21:12:26.933Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CarritoWeb.aspx",
-              "DocumentMoniker": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\CarritoWeb.aspx",
-              "RelativeDocumentMoniker": "webform\\CarritoWeb.aspx",
-              "ToolTip": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\CarritoWeb.aspx",
-              "RelativeToolTip": "webform\\CarritoWeb.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-16T00:06:35.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
             },
             {
               "$type": "Bookmark",
@@ -108,6 +95,57 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VerProductos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\VerProductos.aspx.cs",
+              "RelativeDocumentMoniker": "webform\\VerProductos.aspx.cs",
+              "ToolTip": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\VerProductos.aspx.cs",
+              "RelativeToolTip": "webform\\VerProductos.aspx.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T15:36:02.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VerProductos.aspx",
+              "DocumentMoniker": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\VerProductos.aspx",
+              "RelativeDocumentMoniker": "webform\\VerProductos.aspx",
+              "ToolTip": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\VerProductos.aspx",
+              "RelativeToolTip": "webform\\VerProductos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-16T15:35:58.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarritoWeb.aspx",
+              "DocumentMoniker": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\CarritoWeb.aspx",
+              "RelativeDocumentMoniker": "webform\\CarritoWeb.aspx",
+              "ToolTip": "C:\\Users\\Diego_prieto\\Documents\\TUP\\tp-carrito-equipo-4\\TPCarrito_equipo-4\\webform\\CarritoWeb.aspx",
+              "RelativeToolTip": "webform\\CarritoWeb.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-16T00:06:35.472Z",
+              "EditorCaption": ""
             }
           ]
         }
