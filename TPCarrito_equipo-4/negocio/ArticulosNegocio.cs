@@ -91,6 +91,85 @@ namespace negocio
             }
         }
 
+        public List<Articulo> listarArticulosDeCategoria(string categoria)
+        {
+            List<Articulo> lista = new List<Articulo>();
+
+            Data accesoDatos = new Data();
+
+            try
+            {
+
+                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
+                    + "C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
+                    "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE C.Descripcion LIKE @categoria ORDER BY A.Id ASC");
+
+                accesoDatos.setearParametro("@categoria", categoria);
+
+                accesoDatos.ejecutarLectura();
+
+                while (accesoDatos.Lector.Read())
+                {
+                    // Si el artículo que se está leyendo ya fue cargado, es porque tiene más de una imagen.
+                    int indiceArticuloExistente = lista.FindIndex(a => a.Id == (int)accesoDatos.Lector["Id"]);
+                    if (indiceArticuloExistente != -1)
+                    {
+                        // le agrego la imagen nueva y avanzo al siguiente registro.
+                        Imagen imagen = new Imagen();
+                        imagen.Url = (string)accesoDatos.Lector["UrlImagen"];
+                        lista[indiceArticuloExistente].Imagenes.Add(imagen);
+                        continue;
+                    }
+
+                    Articulo articulo = new Articulo();
+                    articulo.Id = (int)accesoDatos.Lector["Id"];
+                    articulo.CodigoArticulo = (string)accesoDatos.Lector["Codigo"];
+                    articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
+                    articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
+
+                    //Creacion de Marca y relacion en datagrid
+                    articulo.Marca = new Marca();
+                    if (!(accesoDatos.Lector["Id_Marca"] is DBNull))
+                    {
+                        articulo.Marca.Id = (int)accesoDatos.Lector["Id_Marca"];
+                        articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
+                    }
+
+                    //Creacion de Categoria y relacion en datagrid
+                    articulo.Categoria = new Categoria();
+                    if (!(accesoDatos.Lector["Id_Categoria"] is DBNull))
+                    {
+                        articulo.Categoria.Id = (int)accesoDatos.Lector["Id_Categoria"];
+                        articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
+                    }
+                    articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
+                    articulo.Imagenes = new List<Imagen>();
+
+                    // si no tiene imagenes, no se cargan en el objeto
+                    if (!(accesoDatos.Lector["UrlImagen"] is DBNull))
+                    {
+                        Imagen auxImagen = new Imagen();
+                        auxImagen.Url = (string)accesoDatos.Lector["UrlImagen"];
+                        articulo.Imagenes.Add(auxImagen);
+                    }
+
+
+                    lista.Add(articulo);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
         public List<Articulo> listarConSP()
         {
             List<Articulo> lista = new List<Articulo>();
