@@ -19,6 +19,7 @@
             <asp:Image ID="imgBannerGrande" runat="server" ImageUrl="https://i.imgur.com/PjG18ZK.png" CssClass="img-fluid" alt="Artículo Imagen" />
 
             <div class="row">
+                <h1 class="display-4 m-2">Categorías</h1>
                 <asp:Repeater ID="repCategorias" runat="server">
                     <ItemTemplate>
                         <div class="col-md-4">
@@ -58,6 +59,7 @@
             <hr />
 
             <div class="row">
+                <h1 class="display-4 m-2">Marcas</h1>
                 <asp:Repeater ID="repMarcas" runat="server">
                     <ItemTemplate>
                         <div class="col-md-4">
