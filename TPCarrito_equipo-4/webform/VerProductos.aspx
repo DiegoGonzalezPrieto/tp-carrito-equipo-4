@@ -70,6 +70,10 @@
             { %>
         <h2 class="m-3"><%: Categoria %></h2>
         <% } %>
+        <% if (Marca != null)
+            { %>
+        <h2 class="m-3"><%: Marca %></h2>
+        <% } %>
         <div id="tarjetas" class="row row-cols-1 row-cols-md-4 g-6  p-2">
             <asp:Repeater runat="server" ID="repRepetidor2">
                 <ItemTemplate>
@@ -112,6 +116,7 @@
         <div class="d-flex p-2" style="display: flex; justify-content: center;">
             <asp:Button Text="Volver" type="submit" CssClass="btn btn-secondary" ID="btnVolver" runat="server" OnClick="btnVolver_Click" />
         </div>
+
 
 
     </main>
