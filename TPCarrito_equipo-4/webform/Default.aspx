@@ -12,30 +12,70 @@
             text-align: center;
             font-weight: bold;
         }
-#myTab .nav-link.active {
-    color: cyan !important;}
 
+        #myTab .nav-link.active {
+            color: cyan !important;
+        }
     </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main id="Inicio">
         <div class="container my-4">
+            <!--- IMG banner grande -->
             <asp:Image ID="imgBannerGrande" runat="server" ImageUrl="https://i.imgur.com/C8mdnQS.png" CssClass="img-fluid" alt="Artículo Imagen" />
 
-            
+            <!--- Collapse ver todos los productos -->
+
+            <p class="my-4 d-grid gap-2">
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="font-size: xx-large; text-align: center; font-weight: bold; color: white; background-color: black;">
+                    - VER TODOS LOS PRODUCTOS -
+                </button>
+
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+
+                    <!--- Repeater con cards de articulos -->
+
+                    <div id="tarjetas" class="row row-cols-1 row-cols-md-4 g-6">
+                        <asp:Repeater runat="server" ID="repRepetidor1">
+                            <ItemTemplate>
+                                <div class="col">
+                                    <div class="card" id="card">
+                                        <img src='<%# UrlImagen(Eval("Imagenes")) %>' class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';">
+                                        <div class="cardbody">
+                                            <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                                            <p class="card-text descripcion"><span class="texto"><%#Eval("Descripcion") %></span><span class="verMas">... <a id="verMas" data-bs-toggle="modal" data-bs-target="#VerMas<%# Container.ItemIndex %>">Ver más</a></span></p>
+                                            <asp:Button Text="Ver Detalle" CssClass="btn btn-primary" ID="btnVerDetalle" runat="server" OnClick="btnVerDetalle_Click" CommandArgument='<%# Eval("Id") %>' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--- Pestanias Categorias/Marcas -->
+
             <ul class="nav nav-tabs  my-4" id="myTab" role="tablist">
                 <li class="nav-item col-md-6" role="presentation">
-                    <a class="nav-link active" id="categorias-tab" data-bs-toggle="tab" href="#categorias" role="tab" aria-controls="categorias" aria-selected="true" style="font-size: xx-large; text-align: center; font-weight: bold;color:white; background-color:black">- CATEGORÍAS -</a>
+                    <a class="nav-link active" id="categorias-tab" data-bs-toggle="tab" href="#categorias" role="tab" aria-controls="categorias" aria-selected="true" style="font-size: xx-large; text-align: center; font-weight: bold; color: white; background-color: black">- CATEGORÍAS -</a>
                 </li>
                 <li class="nav-item col-md-6" role="presentation">
-                    <a class="nav-link" id="marcas-tab" data-bs-toggle="tab" href="#marcas" role="tab" aria-controls="marcas" aria-selected="false" style="font-size: xx-large;text-align: center; font-weight: bold;color:white; background-color:black">- MARCAS -</a>
+                    <a class="nav-link" id="marcas-tab" data-bs-toggle="tab" href="#marcas" role="tab" aria-controls="marcas" aria-selected="false" style="font-size: xx-large; text-align: center; font-weight: bold; color: white; background-color: black">- MARCAS -</a>
                 </li>
             </ul>
 
+
             <div class="tab-content" id="myTabContent">
+
+                    <!--- Repeater con cards de Categorias -->
+
                 <div class="tab-pane fade show active" id="categorias" role="tabpanel" aria-labelledby="categorias-tab">
                     <div class="row">
-                        
                         <asp:Repeater ID="repCategorias" runat="server">
                             <ItemTemplate>
                                 <div class="col-md-4">
@@ -72,6 +112,8 @@
                         </asp:Repeater>
                     </div>
                 </div>
+
+                    <!--- Repeater con cards de Marcas -->
 
                 <div class="tab-pane fade" id="marcas" role="tabpanel" aria-labelledby="marcas-tab">
                     <div class="row">
@@ -111,8 +153,12 @@
                         </asp:Repeater>
                     </div>
                 </div>
-                </div>
             </div>
-             <asp:Image ID="imgBannerChico" runat="server" ImageUrl="https://i.imgur.com/P1LufCk.png" CssClass="img-fluid" alt="Artículo Imagen" />
+        </div>
+
+        <!--- IMG Banner chico -->
+
+
+        <asp:Image ID="imgBannerChico" runat="server" ImageUrl="https://i.imgur.com/P1LufCk.png" CssClass="img-fluid" alt="Artículo Imagen" />
     </main>
 </asp:Content>

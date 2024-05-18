@@ -19,8 +19,16 @@ namespace webform
         public List<string> NombresMarcas { get; set; }
         public List<List<Articulo>> ArticulosPorMarcas { get; set; }
 
+        private List<Articulo> ListarArticulos;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            ArticulosNegocio articulo = new ArticulosNegocio();
+
+            ListarArticulos = articulo.listar();
+            Session.Add("listaArticulos", articulo.listar());
+          
             if (!IsPostBack)
             {
                 CargarArticulosPorCategoria();
@@ -31,6 +39,24 @@ namespace webform
                 CargarArticulosPorMarcas();
                 repMarcas.DataSource = NombresMarcas;
                 repMarcas.DataBind();
+
+                repRepetidor1.DataSource = ListarArticulos;
+                repRepetidor1.DataBind();
+            }
+
+            
+        }
+
+        public string UrlImagen(object urlImagen)
+        {
+            List<Imagen> imagenes = urlImagen as List<Imagen>;
+            if (imagenes != null)
+            {
+                return imagenes[0].Url;
+            }
+            else
+            {
+                return "Error de carga.";
             }
         }
 
@@ -89,5 +115,11 @@ namespace webform
             }
         }
 
+        protected void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            Response.Redirect("VerDetalle.aspx?id=" + id);
+        }
     }
 }

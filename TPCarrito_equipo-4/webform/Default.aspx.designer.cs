@@ -24,6 +24,15 @@ namespace webform
         protected global::System.Web.UI.WebControls.Image imgBannerGrande;
 
         /// <summary>
+        /// repRepetidor1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repRepetidor1;
+
+        /// <summary>
         /// repCategorias control.
         /// </summary>
         /// <remarks>

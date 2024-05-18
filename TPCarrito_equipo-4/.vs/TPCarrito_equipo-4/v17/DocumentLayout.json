@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|c:\\users\\lucho\\desktop\\code\\utn\\3\u00B0cuatrimestre\\programacion iii\\tp4 webform\\tpcarrito_equipo-4\\webform\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{394D285D-49F3-4FD5-ACA8-47A5AF4AF0B7}|webform\\webform.csproj|solutionrelative:webform\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -63,19 +58,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\Default.aspx",
-              "RelativeDocumentMoniker": "webform\\Default.aspx",
-              "ToolTip": "C:\\Users\\lucho\\Desktop\\Code\\UTN\\3\u00B0Cuatrimestre\\Programacion III\\TP4 WebForm\\TPCarrito_equipo-4\\webform\\Default.aspx",
-              "RelativeToolTip": "webform\\Default.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-18T03:38:42.428Z",
-              "EditorCaption": ""
             }
           ]
         }
