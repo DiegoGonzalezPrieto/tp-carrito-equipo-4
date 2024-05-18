@@ -13,14 +13,14 @@
             font-weight: bold;
         }
 #myTab .nav-link.active {
-    color: #FFD700 !important;}
+    color: cyan !important;}
 
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main id="Inicio">
         <div class="container my-4">
-            <asp:Image ID="imgBannerGrande" runat="server" ImageUrl="https://i.imgur.com/PjG18ZK.png" CssClass="img-fluid" alt="Artículo Imagen" />
+            <asp:Image ID="imgBannerGrande" runat="server" ImageUrl="https://i.imgur.com/C8mdnQS.png" CssClass="img-fluid" alt="Artículo Imagen" />
 
             
             <ul class="nav nav-tabs  my-4" id="myTab" role="tablist">
@@ -113,6 +113,6 @@
                 </div>
                 </div>
             </div>
-             <asp:Image ID="imgBannerChico" runat="server" ImageUrl="https://i.imgur.com/uIslgtf.png" CssClass="img-fluid" alt="Artículo Imagen" />
+             <asp:Image ID="imgBannerChico" runat="server" ImageUrl="https://i.imgur.com/P1LufCk.png" CssClass="img-fluid" alt="Artículo Imagen" />
     </main>
 </asp:Content>
