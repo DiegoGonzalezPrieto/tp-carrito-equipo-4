@@ -6,11 +6,11 @@
 
     <main id="homePage">
 
-        <!-- BUSQUEDA -->
+        <!-- BUSQUEDA 
         <div class="d-flex p-2" role="search" style="width: 25%; margin-left: auto; margin-right: 0;">
             <asp:TextBox placeholder="Buscar..." type="search" CssClass="form-control me-2" ID="txtBuscar" runat="server" Style="margin-right: 10px;"></asp:TextBox>
             <asp:Button Text="Buscar" type="submit" CssClass="btn btn-outline-success" ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" />
-        </div>
+        </div>-->
         <!-- BOTON FILTRADO -->
         <div class="d-flex" role="search" style="width: 25%; margin-left: auto; margin-right: 10px; justify-content: end">
             <asp:Button Text="Filtrar" ID="btnFiltrar" CssClass="btn btn-secondary" OnClientClick="return false;" runat="server" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" />

@@ -77,8 +77,8 @@ namespace webform
             }
 
 
-            btnVolver.Visible = false;
-            btnFiltrar.Visible = false;
+            //btnVolver.Visible = false;
+            //btnFiltrar.Visible = false;
 
         }
 
@@ -159,16 +159,16 @@ namespace webform
             }
 
             btnFiltrar.Visible = true;
-            btnVolver.Visible = true;
+            
         }
 
         private void comprobacion()
         {
-            if (string.IsNullOrEmpty(txtBuscar.Text))
+            if (string.IsNullOrEmpty(txtAvanzado.Text) && string.IsNullOrEmpty(ddlCategoria.Text) && string.IsNullOrEmpty(ddlMarca.Text) && string.IsNullOrEmpty(txtPrecioMayor.Text) && string.IsNullOrEmpty(txtPrecioMenor.Text))
             {
                 lblCabezera.Text = "";
-                btnVolver.Visible = false;
-                btnFiltrar.Visible = false;
+                
+                //btnFiltrar.Visible = false;
                 ScriptManager.RegisterStartupScript(this, this.GetType(),
                     "ocultarCarrusel", "document.getElementById('carouselExampleAutoplaying').style.display = 'block';", true);
             }
@@ -194,6 +194,8 @@ namespace webform
 
             btnVolver.Visible = false;
             btnFiltrar.Visible = false;
+
+            Response.Redirect("Default.aspx");
         }
     }
 }
