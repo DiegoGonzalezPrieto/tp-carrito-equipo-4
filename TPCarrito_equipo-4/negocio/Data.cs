@@ -22,7 +22,7 @@ namespace negocio
         {
             //Aqui se deberia de cambiar el nombre del servidor por el de cada uno. ej SQLEXPRESS
 
-           //conexion = new SqlConnection("server =.\\DEVSERVER; database = CATALOGO_P3_DB; integrated security = true");
+            //conexion = new SqlConnection("server =.\\DEVSERVER; database = CATALOGO_P3_DB; integrated security = true");
 
             conexion = new SqlConnection("server = localhost\\SQLEXPRESS; database = CATALOGO_P3_DB; integrated security = true");
 

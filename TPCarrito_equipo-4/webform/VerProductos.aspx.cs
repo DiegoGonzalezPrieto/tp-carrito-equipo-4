@@ -14,11 +14,17 @@ namespace webform
     {
         private List<Articulo> ListarArticulos;
         public string Categoria;
+        public string Marca;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["categoria"] != null)
             {
                 Categoria = Request.QueryString["categoria"];
+            }
+
+            if (Request.QueryString["marcas"] != null)
+            {
+                Marca = Request.QueryString["marcas"];
             }
 
             ArticulosNegocio articulo = new ArticulosNegocio();
@@ -30,12 +36,16 @@ namespace webform
                 ListarArticulos = articulo.listarArticulosDeCategoria(Categoria);
                 Session.Add("listaArticulos", articulo.listarArticulosDeCategoria(Categoria));
             }
+            else if (Marca != null)
+            {
+                ListarArticulos = articulo.listarArticulosDeMarca(Marca);
+                Session.Add("listaArticulos", articulo.listarArticulosDeMarca(Marca));
+            }
             else
             {
                 ListarArticulos = articulo.listar();
                 Session.Add("listaArticulos", articulo.listar());
             }
-
 
 
 
