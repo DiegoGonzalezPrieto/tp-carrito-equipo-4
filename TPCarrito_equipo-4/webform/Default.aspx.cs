@@ -19,6 +19,10 @@ namespace webform
         public List<string> NombresMarcas { get; set; }
         public List<List<Articulo>> ArticulosPorMarcas { get; set; }
 
+        public int cantImagenesPorCategoria;
+        public int cantImagenesPorMarca;
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -51,7 +55,7 @@ namespace webform
                     ArticulosPorCategoria.Add(new List<Articulo>());
                 }
                 int indice = NombresCategorias.IndexOf(categoria);
-                ArticulosPorCategoria[indice].Add(articulo);
+                ArticulosPorCategoria[indice].Add(articulo);               
 
             }
         }
@@ -87,6 +91,17 @@ namespace webform
             {
                 return "https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg";
             }
+        }
+
+        protected void imgBannerGrande_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerProductos.aspx");
+        }
+
+        protected void imgBannerChico_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("VerProductos.aspx");
+
         }
 
     }

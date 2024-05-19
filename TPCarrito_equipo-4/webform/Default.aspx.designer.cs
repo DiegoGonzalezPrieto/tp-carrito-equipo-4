@@ -21,7 +21,7 @@ namespace webform
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBannerGrande;
+        protected global::System.Web.UI.WebControls.ImageButton imgBannerGrande;
 
         /// <summary>
         /// repCategorias control.
@@ -48,6 +48,6 @@ namespace webform
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBannerChico;
+        protected global::System.Web.UI.WebControls.ImageButton imgBannerChico;
     }
 }

@@ -20,7 +20,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main id="Inicio">
         <div class="container my-4">
-            <asp:Image ID="imgBannerGrande" runat="server" ImageUrl="https://i.imgur.com/C8mdnQS.png" CssClass="img-fluid" alt="Artículo Imagen" />
+            <asp:ImageButton ID="imgBannerGrande" runat="server" OnClick="imgBannerGrande_Click" ImageUrl="https://i.imgur.com/C8mdnQS.png" CssClass="img-fluid" alt="Artículo Imagen" />
 
             
             <ul class="nav nav-tabs  my-4" id="myTab" role="tablist">
@@ -49,12 +49,13 @@
                                                             <ItemTemplate>
                                                                 <div class='<%# Container.ItemIndex == 0 ? "carousel-item active" : "carousel-item" %>'>
                                                                     <img class="d-block w-100" src='<%# ObtenerPrimerUrl(Container.DataItem as dominio.Articulo) %>' alt='<%# ((dominio.Articulo)Container.DataItem).Nombre %>' onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';" />
+                                                                  <% cantImagenesPorCategoria++; %>
                                                                 </div>
                                                             </ItemTemplate>
                                                         </asp:Repeater>
                                                     </div>
                                                 </a>
-
+                                           <% if (cantImagenesPorCategoria > 1) { %>
                                                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%# Container.ItemIndex %>" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Previous</span>
@@ -63,11 +64,12 @@
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Next</span>
                                                 </button>
-
+                                                <%} %>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <% cantImagenesPorCategoria = 0; %>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
@@ -89,11 +91,13 @@
                                                                 <div class='<%# Container.ItemIndex == 0 ? "carousel-item active" : "carousel-item" %>'>
                                                                     <img class="d-block w-100" src='<%# ObtenerPrimerUrl(Container.DataItem as dominio.Articulo) %>' alt='<%# ((dominio.Articulo)Container.DataItem).Nombre %>' onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';" />
                                                                 </div>
+                                                                <% cantImagenesPorMarca++; %>
                                                             </ItemTemplate>
                                                         </asp:Repeater>
                                                     </div>
                                                 </a>
-
+                                                <%if (cantImagenesPorMarca > 1)
+                                                    { %>
                                                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%# Container.ItemIndex %>" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Previous</span>
@@ -102,7 +106,7 @@
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Next</span>
                                                 </button>
-
+                                                <%} cantImagenesPorMarca = 0; %>
                                             </div>
                                         </div>
                                     </div>
@@ -113,6 +117,6 @@
                 </div>
                 </div>
             </div>
-             <asp:Image ID="imgBannerChico" runat="server" ImageUrl="https://i.imgur.com/P1LufCk.png" CssClass="img-fluid" alt="Artículo Imagen" />
+             <asp:ImageButton ID="imgBannerChico" runat="server" OnClick="imgBannerChico_Click" ImageUrl="https://i.imgur.com/P1LufCk.png" CssClass="img-fluid" alt="Artículo Imagen" />
     </main>
 </asp:Content>

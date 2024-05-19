@@ -86,13 +86,13 @@ namespace webform
         {
             List<Imagen> imagenes = urlImagen as List<Imagen>;
 
-            if (imagenes != null)
+            if (imagenes != null && imagenes.Any())
             {
                 return imagenes[0].Url;
             }
             else
             {
-                return "Error de carga.";
+                return "https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg"; 
             }
         }
 

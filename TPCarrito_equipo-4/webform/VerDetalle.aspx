@@ -57,31 +57,38 @@
         </div>
        
 
-        <div class="col-md-6">
-            
-            <div id="cardInfoArticulo" class="card shadow-sm">
-
-                        <h1 class="text-center">Detalles del artículo</h1>
-                <div class="card-body d-flex justify-content-between">
-                    <div>
-                        <dl>
-                            <dt>Nombre:</dt>
-                            <dd>- <%= datosArticulo.Nombre %></dd>
-                            <dt>Marca:</dt>
-                            <dd>- <%= datosArticulo.Marca %></dd>
-                            <dt>Categoría:</dt>
-                            <dd>- <%= datosArticulo.Categoria %></dd>
-                            <dt>Descripción:</dt>
-                            <dd>- <%= datosArticulo.Descripcion %></dd>
-                        </dl>
-                    </div>
-                    <div>
-                            <h6 class="fw-bold text-center">Precio:</h6>
-                            <button type="button" class="btn btn-outline-primary btn-lg fs-2 fw-bold" disabled><%= datosArticulo.PrecioMoneda %></button>
-                    </div>
+<div class="col-md-6">
+    <div id="cardInfoArticulo" class="card shadow-sm" style="height:400px">
+        <h1 class="text-center">Detalles del artículo</h1>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <dl>
+                        <dt>Nombre:</dt>
+                        <dd>- <%= datosArticulo.Nombre %></dd>
+                        <dt>Marca:</dt>
+                        <dd>- <%= datosArticulo.Marca %></dd>
+                        <dt>Categoría:</dt>
+                        <dd>- <%= datosArticulo.Categoria %></dd>
+                    </dl>
                 </div>
+                <div class="col-md-8 text-center">
+                    <h5 class="fw-bold">Precio:</h5>
+                    <button type="button" class="btn btn-outline-primary btn-lg fs-2 fw-bold" disabled><%= datosArticulo.PrecioMoneda %></button>
                 </div>
             </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <dl>
+                        <dt>Descripción:</dt>
+                        <dd>- <%= datosArticulo.Descripcion %></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
 
     </div>

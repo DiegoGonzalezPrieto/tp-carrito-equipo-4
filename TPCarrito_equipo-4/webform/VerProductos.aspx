@@ -24,7 +24,7 @@
             <div class="offcanvas-body">
                 <div class="d-flex flex-column p-2" role="search" style="width: 100%; margin-left: auto; margin-right: 0;">
                     <asp:TextBox type="search" CssClass="form-control me-2" ID="txtAvanzado" runat="server" Style="margin-bottom: 10px;"></asp:TextBox>
-                    <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control me-2" Style="margin-bottom: 10px;"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control me-2" Style="margin-bottom: 10px;" ></asp:DropDownList>
                     <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control me-2" Style="margin-bottom: 10px;"></asp:DropDownList>
                     <asp:TextBox placeholder="Precio mayor a" type="number" CssClass="form-control me-2" ID="txtPrecioMayor" runat="server" Style="margin-bottom: 10px;" min="0"></asp:TextBox>
                     <asp:TextBox placeholder="Precio menor a" type="number" CssClass="form-control me-2" ID="txtPrecioMenor" runat="server" Style="margin-bottom: 10px;" min="0"></asp:TextBox>
@@ -74,19 +74,19 @@
             { %>
         <h2 class="m-3"><%: Marca %></h2>
         <% } %>
-        <div id="tarjetas" class="row row-cols-1 row-cols-md-4 g-6  p-2">
+        <div id="tarjetas" class="row row-cols-1 row-cols-md-4 g-6 p-2">
             <asp:Repeater runat="server" ID="repRepetidor2">
                 <ItemTemplate>
                     <div class="col">
                         <div class="card" id="card">
                             <a href="VerDetalle.aspx?id=<%#Eval("Id") %>">
-                                <img src='<%# UrlImagen(Eval("Imagenes")) %>' class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';">
+                                <img src='<%# UrlImagen(Eval("Imagenes")) %>' class="card-img-top" style="height:250px" alt="..." onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg';">
                             </a>
                             <div class="cardbody">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text descripcion"><span class="texto"><%#Eval("Descripcion") %></span><span class="verMas">... <a id="verMas" data-bs-toggle="modal" data-bs-target="#VerMas<%# Container.ItemIndex %>">Ver más</a></span></p>
-                                <asp:Button Text="Ver Detalle" CssClass="btn btn-primary" ID="btnVerDetalle" runat="server" OnClick="btnVerDetalle_Click" CommandArgument='<%# Eval("Id") %>' />
-                            </div>
+                                <asp:Button Text="Ver Detalle" CssClass="btn btn-primary w-100" ID="btnVerDetalle" runat="server" OnClick="btnVerDetalle_Click" CommandArgument='<%# Eval("Id") %>' />
+                                </div>
                         </div>
                     </div>
 
