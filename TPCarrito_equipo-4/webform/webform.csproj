@@ -71,6 +71,7 @@
     <Content Include="CarritoWeb.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Estilos\estilosPaginaPrincipal.css" />
+    <Content Include="Faqs.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Script\Script.js" />
     <Content Include="VerDetalle.aspx" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faqs.aspx.cs">
+      <DependentUpon>Faqs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faqs.aspx.designer.cs">
+      <DependentUpon>Faqs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
