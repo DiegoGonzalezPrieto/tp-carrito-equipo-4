@@ -51,6 +51,15 @@ namespace webform
         protected global::System.Web.UI.WebControls.TextBox txtAvanzado;
 
         /// <summary>
+        /// lblFiltroBusqueda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltroBusqueda;
+
+        /// <summary>
         /// ddlMarca control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace webform
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMarca;
+
+        /// <summary>
+        /// lblFiltroMarca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltroMarca;
 
         /// <summary>
         /// ddlCategoria control.
@@ -69,6 +87,15 @@ namespace webform
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
 
         /// <summary>
+        /// lblFiltroCateogria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltroCateogria;
+
+        /// <summary>
         /// txtPrecioMayor control.
         /// </summary>
         /// <remarks>
@@ -78,6 +105,15 @@ namespace webform
         protected global::System.Web.UI.WebControls.TextBox txtPrecioMayor;
 
         /// <summary>
+        /// lblFiltroPrecioMayor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltroPrecioMayor;
+
+        /// <summary>
         /// txtPrecioMenor control.
         /// </summary>
         /// <remarks>
@@ -85,6 +121,15 @@ namespace webform
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecioMenor;
+
+        /// <summary>
+        /// lblFiltroPrecioMenor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltroPrecioMenor;
 
         /// <summary>
         /// btnBuscarAvanzado control.
